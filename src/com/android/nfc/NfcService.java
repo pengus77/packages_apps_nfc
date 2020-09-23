@@ -912,6 +912,13 @@ public class NfcService implements DeviceHostListener {
     }
 
     final class NfcAdapterService extends INfcAdapter.Stub {
+	/**
+         * An interface for vendor specific extensions
+         */
+        public IBinder getNfcAdapterVendorInterface(String vendor) {
+            return null;
+        }
+
         @Override
         public boolean enable() throws RemoteException {
             NfcPermissions.enforceAdminPermissions(mContext);
